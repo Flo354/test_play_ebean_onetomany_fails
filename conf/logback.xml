@@ -1,0 +1,25 @@
+<!-- https://www.playframework.com/documentation/latest/SettingsLogger -->
+<configuration>
+
+  <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel" />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%coloredLevel %logger - %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="akka.actor" level="INFO" />
+  <logger name="play" level="DEBUG" />
+  <logger name="application" level="DEBUG" />
+  <logger name="root" level="DEBUG" />
+  <logger name="play.shaded" level="ERROR" />
+  <logger name="play.mvc.Action" level="INFO" />
+
+  <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
